@@ -1,0 +1,91 @@
+/* src/pages/Login.module.css */
+
+.loginPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Make it 90vh to account for a bit of space, not full viewport */
+  min-height: 90vh; 
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.form {
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem;
+  background-color: var(--color-surface); /* Dark surface card */
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.title {
+  text-align: center;
+  color: var(--color-text-primary);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-secondary); /* Mid-grey */
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  box-sizing: border-box;
+  background-color: var(--color-background); /* Darkest background */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-primary); /* Light text */
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: #4B5563; /* A muted grey */
+}
+
+/* New focus style using the violet primary color */
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(138, 99, 210, 0.2); /* Soft violet glow */
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background-color: var(--color-primary); /* Electric Violet */
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.02);
+}
+
+/* New class for the "Sign up" link */
+.signupText {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}

@@ -1,0 +1,47 @@
+/* src/pages/Kanban.module.css */
+
+.kanbanPage {
+  /* This creates a full-screen container below the navbar.
+     Assumes navbar height is approx 65px. */
+  height: calc(100vh - 65px);
+  
+  display: flex;
+  flex-direction: column;
+  padding: 0 3%; /* Padding left/right */
+  max-width: 1800px;
+  margin: 0 auto;
+  box-sizing: border-box; 
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  
+  /* This header does not scroll */
+  flex-shrink: 0; 
+}
+
+.loadingText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
+
+.columnsContainer {
+  display: flex;
+  gap: 1.5rem; /* Space between columns */
+  
+  /* This container takes up all remaining vertical space
+     and enables horizontal scrolling */
+  flex-grow: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 1.5rem; /* Space for the scrollbar */
+}

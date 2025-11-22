@@ -1,0 +1,109 @@
+/* src/components/JobCard.module.css */
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  
+  /* This is the new colored border on the left */
+  border-left-width: 5px;
+  
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary-hover);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.3rem; /* Slightly smaller for card */
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.company {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  margin: 0.25rem 0 0 0;
+}
+
+/* We will style the status badge later */
+.statusBadge {
+  background-color: var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  margin: 1rem 0;
+}
+
+.probability {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0 0;
+  display: flex; /* Aligns emoji and text */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.probabilityPending {
+  composes: probability; /* Inherits .probability styles */
+  color: var(--color-text-secondary);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  
+  margin-top: auto; /* Pushes to bottom */
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.editLink {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.editLink:hover {
+  color: var(--color-primary); /* Violet on hover */
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  margin-left: auto; /* Pushes delete button to the far right */
+}
+
+.deleteButton:hover {
+  color: var(--color-accent-red); /* Red on hover */
+}

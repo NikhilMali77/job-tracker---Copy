@@ -1,0 +1,143 @@
+/* src/pages/Dashboard.module.css */
+
+.dashboard {
+  padding: 1.5rem 5%; /* Responsive padding */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* --- HEADER --- */
+.header {
+  margin-bottom: 0.5rem;
+}
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-text-primary);
+}
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin: 0.25rem 0 0 0;
+}
+
+/* --- QUICK STATS --- */
+.quickStats {
+  display: grid;
+  /* Responsive Grid:
+     - On small screens: 1 column
+     - On medium screens: 2 columns
+     - On large screens: 4 columns
+  */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.statCard {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.statCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-primary);
+}
+.statLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* --- QUICK ACTIONS --- */
+.quickActions {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to stack on small screens */
+  gap: 1rem;
+  margin: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2rem;
+}
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+.primary:hover {
+  background-color: var(--color-primary-hover);
+  color: white;
+  transform: scale(1.03);
+}
+.secondary {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+.secondary:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+}
+
+/* --- JOB LIST --- */
+.jobListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.jobListTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+.jobListCount {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+}
+
+.jobsGrid {
+  display: grid;
+  /* Responsive grid for job cards */
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- EMPTY/LOADING STATES --- */
+.emptyState, .loadingText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+.emptyText {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 1.5rem 0;
+}

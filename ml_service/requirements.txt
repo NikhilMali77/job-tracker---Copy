@@ -1,0 +1,6 @@
+# ml_service/requirements.txt
+flask
+scikit-learn
+pandas
+gunicorn
+joblib

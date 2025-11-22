@@ -1,0 +1,141 @@
+/* src/components/NavBar.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%; /* Use padding 0 on top/bottom for fixed height */
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  height: 65px;
+  box-sizing: border-box;
+  
+  /* Add relative positioning for the mobile menu */
+  position: relative;
+  z-index: 1000;
+}
+
+/* Left side of the navbar */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: color 0.2s ease;
+  flex-shrink: 0; /* Prevents logo from shrinking */
+}
+.logo:hover {
+  color: var(--color-primary-hover);
+}
+
+.navLink {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.navLink:hover {
+  color: var(--color-text-primary);
+}
+.navLink.active {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Right side of the navbar */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.welcomeText {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+.logoutButton {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* Prevents "Log Out" from wrapping */
+}
+.logoutButton:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-primary);
+}
+
+/* --- NEW: Hamburger Button --- */
+.hamburgerButton {
+  display: none; /* Hidden on desktop */
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001; /* Above the mobile menu */
+}
+
+/* --- NEW: Mobile Responsive Styles --- */
+@media (max-width: 900px) {
+  /* Show the hamburger button */
+  .hamburgerButton {
+    display: block;
+  }
+
+  /* Hide the desktop nav links */
+  .navLinks {
+    display: none;
+  }
+  
+  /* Hide the welcome text, just show logout */
+  .welcomeText {
+    display: none;
+  }
+
+  /* This class is added when the menu is open */
+  .mobileNavActive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem;
+    gap: 1.5rem;
+    
+    /* Full-screen overlay */
+    position: fixed;
+    top: 65px; /* Position below the navbar */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 65px);
+    background-color: var(--color-background); /* Darkest background */
+  }
+
+  /* Style links for the mobile menu */
+  .mobileNavActive .navLink {
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: none;
+  }
+  .mobileNavActive .navLink:hover {
+    color: var(--color-primary);
+  }
+  .mobileNavActive .navLink.active {
+    color: var(--color-primary);
+  }
+}

@@ -1,0 +1,53 @@
+/* src/pages/Analytics.module.css */
+
+.analyticsPage {
+  padding: 1.5rem 5%; /* Responsive padding */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.loadingText,
+.errorText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+}
+
+.chartsGrid {
+  display: grid;
+  /* Responsive grid for charts */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.chartContainer {
+  background-color: var(--color-surface); /* Dark surface card */
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem;
+  min-height: 400px; /* Prevent layout shift */
+}
+/* src/pages/Analytics.module.css */
+
+.chartsGrid {
+  display: grid;
+  /* Changed 400px to 320px. 
+    This allows the charts to fit on mobile screens.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  align-items: flex-start;
+}
